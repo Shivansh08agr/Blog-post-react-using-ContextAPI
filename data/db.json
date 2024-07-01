@@ -1,0 +1,22 @@
+{
+  "posts": [
+    {
+      "id": "1",
+      "title": "1st post",
+      "datetime": "July 16, 2021 11:47:39 AM",
+      "body": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."
+    },
+    {
+      "id": "2",
+      "title": "Virat Kohli",
+      "datetime": "July 01, 2024 9:38:02 AM",
+      "body": "Kohli holds several cricket records, including the most individual hundreds in ODI matches and the most runs scored in a single edition of an ODI World Cup. He has been named Player of the Tournament at global events on three occasions: at the 2014 and 2016 T20I World Cups and the 2023 ODI World Cup. Kohli was also a member of the Indian sides that won the 2011 ODI World Cup, the 2013 ICC (International Cricket Council) Champions Trophy, and the 2024 T20I World Cup. He announced his retirement from Twenty20 international cricket after India won the 2024 T20I World Cup. Kohli's announcement came after he was declared Player of the Match. "
+    },
+    {
+      "id": "3",
+      "title": "Hello World",
+      "datetime": "June 30, 2024 10:12:00 AM",
+      "body": "this is the 3rd post...edited"
+    }
+  ]
+}
