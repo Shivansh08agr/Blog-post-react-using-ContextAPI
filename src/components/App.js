@@ -6,7 +6,7 @@ import PostPage from "./PostPage";
 import About from "./About";
 import Missing from "./Missing";
 import { Routes, Route } from "react-router-dom";
-import { DataProvider } from "./context/DataContext"
+import { DataProvider } from "../context/DataContext"
 
 function App() {
 

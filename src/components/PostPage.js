@@ -1,24 +1,20 @@
 import React from 'react'
 import { useParams, Link } from 'react-router-dom'
 import { useContext } from 'react'
-import  DataContext from "./context/DataContext"
+import DataContext from "../context/DataContext"
 import { useNavigate } from "react-router-dom";
-import api from './api/posts';
 
 const PostPage = () => {
-  const { posts, setPosts}= useContext(DataContext);
+  const { posts, setPosts } = useContext(DataContext);
   const { id } = useParams();
   const post = posts.find(post => post.id === id);
   const navigate = useNavigate();
-  async function handleDelete(id) {
-    try {
-        await api.delete(`/posts/${id}`);
-        const postList = posts.filter(post => post.id !== id);
-        setPosts(postList);
-        navigate('/');
-    } catch (err) {
-        console.log(`Error: ${err.message}`);
-    }
+
+  function handleDelete(id) {
+    const postList = posts.filter(post => post.id !== id);
+    setPosts(postList);
+    localStorage.setItem("savedBlogs", JSON.stringify(postList));
+    navigate('/');
   }
   return (
     <main className='PostPage'>
@@ -28,8 +24,8 @@ const PostPage = () => {
             <h2>{post.title}</h2>
             <p className='postDate'>{post.datetime}</p>
             <p className='postBody'>{post.body}</p>
-            <Link to= {`/edit/${post.id}`}><button className='editButton'>Edit Post</button></Link>
-            <button className= 'deleteButton' onClick={() => handleDelete(post.id)}>Delete Post</button>
+            <Link to={`/edit/${post.id}`}><button className='editButton'>Edit Post</button></Link>
+            <button className='deleteButton' onClick={() => handleDelete(post.id)}>Delete Post</button>
           </>
         }
         {!post &&

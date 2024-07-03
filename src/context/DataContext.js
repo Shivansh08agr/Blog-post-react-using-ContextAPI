@@ -1,18 +1,13 @@
 import { createContext, useState, useEffect } from "react";
-import useAxiosFetch from "../Hooks/useAxiosFetch";
 
 const DataContext = createContext({});
 
 export const DataProvider = ({ children }) => {
-    const [posts, setPosts] = useState([]);
+    const [posts, setPosts] = useState(
+        JSON.parse(localStorage.getItem("savedBlogs")) || []
+    );
     const [search, setSearch] = useState('');
     const [searchResults, setSearchResults] = useState([]);
-
-    const { data, fetchError, isLoading } = useAxiosFetch('http://localhost:3500/posts')
-
-    useEffect(() => {
-        setPosts(data);
-    }, [data])
 
     useEffect(() => {
         const filteredResults = posts.filter((post) =>
@@ -24,7 +19,7 @@ export const DataProvider = ({ children }) => {
 
     return (
         <DataContext.Provider value={{
-            search, setSearch, searchResults, fetchError, isLoading, setSearchResults, posts, setPosts
+            search, setSearch, searchResults, setSearchResults, posts, setPosts
         }}>
             {children}
         </DataContext.Provider>
